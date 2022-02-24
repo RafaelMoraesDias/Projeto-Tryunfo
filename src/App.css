@@ -1,14 +1,14 @@
 .cartas {
-    display: flex;
-    flex-direction: column;
-    border: solid black;
-    width: 20%;
-    height: 350px;
+  display: flex;
+  border: solid black;
+  flex-direction: column;
+  height: 350px;
+  width: 20%;
 }
 
 .form {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 /* .tela {

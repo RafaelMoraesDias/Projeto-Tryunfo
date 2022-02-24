@@ -132,9 +132,11 @@ class App extends React.Component {
             cardRare={ Rare }
             hasTrunfo={ hasTrunfo }
             cardTrunfo={ Trunfo }
+
           />
           <div className="baralho">
             <h1> Meu Baralho </h1>
+            <cartas />
           </div>
         </div>
       );
