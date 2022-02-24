@@ -17,6 +17,7 @@ class App extends React.Component {
       Trunfo: false,
       hasTrunfo: false,
       isSaveButtonDisabled: true,
+      cards: [], // criado novo estado com array vazia
 
     };
     // this.onInputChange = this.onInputChange.bind(this);
@@ -57,6 +58,20 @@ class App extends React.Component {
 
     onSaveButtonClick = (el) => {
       el.preventDefault();
+      const newCard = { ...this.state }; // recebe o novo estado sem apagar o anterior
+      this.setState((prevState) => ({ // setado um novo estado mantendo o estado anterior
+        nome: '',
+        Description: '',
+        Att1: 0,
+        Att2: 0,
+        Att3: 0,
+        Image: '',
+        Rare: 'normal',
+        Trunfo: false,
+        hasTrunfo: false,
+        isSaveButtonDisabled: true,
+        cards: [...prevState.cards, newCard], // atribuindo a dinamica ao array vazio
+      }));
     };
 
     render() {
@@ -76,6 +91,7 @@ class App extends React.Component {
         <div>
           <h1>Tryunfo</h1>
           <Form
+            { ...this.state } // renderiza o estado anterior
             cardName={ nome }
             cardDescription={ Description }
             cardAttr1={ Att1 }
@@ -90,6 +106,7 @@ class App extends React.Component {
             onSaveButtonClick={ this.onSaveButtonClick }
           />
           <Card
+            { ...this.state }
             cardName={ nome }
             cardDescription={ Description }
             cardAttr1={ Att1 }
