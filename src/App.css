@@ -1,0 +1,17 @@
+.cartas {
+    display: flex;
+    flex-direction: column;
+    border: solid black;
+    width: 20%;
+    height: 350px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* .tela {
+    display: flex;
+    margin: 40px;
+} */

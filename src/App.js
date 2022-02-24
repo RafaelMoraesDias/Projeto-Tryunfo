@@ -1,4 +1,5 @@
 import React from 'react';
+import './App.css';
 import Card from './components/Card';
 import Form from './components/Form';
 
@@ -71,8 +72,23 @@ class App extends React.Component {
         hasTrunfo: false,
         isSaveButtonDisabled: true,
         cards: [...prevState.cards, newCard], // atribuindo a dinamica ao array vazio
-      }));
+      }), () => this.CheckTrunfo());
     };
+
+    CheckTrunfo = () => {
+      const { cards } = this.state;
+      const result = cards.some((el) => el.Trunfo);
+      console.log(result);
+      if (result === true) {
+        this.setState({ hasTrunfo: true });
+      } else {
+        this.setState({ hasTrunfo: false });
+      }
+    }
+
+    saveDeck = () => {
+      // const { cards } = this.state;
+    }
 
     render() {
       const {
@@ -88,7 +104,7 @@ class App extends React.Component {
         isSaveButtonDisabled,
       } = this.state;
       return (
-        <div>
+        <div className="tela">
           <h1>Tryunfo</h1>
           <Form
             { ...this.state } // renderiza o estado anterior
@@ -117,6 +133,9 @@ class App extends React.Component {
             hasTrunfo={ hasTrunfo }
             cardTrunfo={ Trunfo }
           />
+          <div className="baralho">
+            <h1> Meu Baralho </h1>
+          </div>
         </div>
       );
     }
