@@ -106,7 +106,7 @@ class Form extends React.Component {
             name="Trunfo"
             checked={ cardTrunfo }
             data-testid="trunfo-input"
-            onClick={ onInputChange }
+            onChange={ onInputChange }
           />
         </label>
         <button
