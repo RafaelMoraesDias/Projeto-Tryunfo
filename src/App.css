@@ -1,6 +1,6 @@
 .cartas {
-  display: flex;
   border: solid black;
+  display: flex;
   flex-direction: column;
   height: 350px;
   width: 20%;
