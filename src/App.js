@@ -86,8 +86,12 @@ class App extends React.Component {
       }
     }
 
-    saveDeck = () => {
-      // const { cards } = this.state;
+    removeButton = (event) => {
+      const { cards } = this.state;
+      const newArray = cards.filter((el) => event.target.value !== el.nome);
+      this.setState({
+        cards: newArray,
+      }, () => this.CheckTrunfo());
     }
 
     render() {
@@ -102,6 +106,7 @@ class App extends React.Component {
         Trunfo,
         hasTrunfo,
         isSaveButtonDisabled,
+        cards,
       } = this.state;
       return (
         <div className="tela">
@@ -132,12 +137,29 @@ class App extends React.Component {
             cardRare={ Rare }
             hasTrunfo={ hasTrunfo }
             cardTrunfo={ Trunfo }
-
           />
-          <div className="baralho">
-            <h1> Meu Baralho </h1>
-            <cartas />
-          </div>
+          {cards.map((el) => (
+            <div key={ el.nome }>
+              <Card
+                cardName={ el.nome }
+                cardDescription={ el.Description }
+                cardAttr1={ el.Att1 }
+                cardAttr2={ el.Att2 }
+                cardAttr3={ el.Att3 }
+                cardImage={ el.Image }
+                cardRare={ el.Rare }
+                cardTrunfo={ el.Trunfo }
+              />
+              <button
+                value={ el.nome }
+                onClick={ this.removeButton }
+                data-testid="delete-button"
+                type="button"
+              >
+                Delete Card
+              </button>
+            </div>))}
+
         </div>
       );
     }

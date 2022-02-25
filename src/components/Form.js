@@ -122,14 +122,14 @@ class Form extends React.Component {
           SALVAR
 
         </button>
-        <button
+        {/* <button
           type="submit"
           data-testid="delete-button"
           onClick={ onSaveButtonClick }
         >
           EXCLUIR
 
-        </button>
+        </button> */}
       </div>
 
     );
