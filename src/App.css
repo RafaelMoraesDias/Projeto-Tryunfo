@@ -1,17 +1,81 @@
 .cartas {
-  border: solid black;
+  background-color: rgb(51, 51, 133);
+  color: white;
+  border-style: solid;
+  border-radius: 12px;
   display: flex;
   flex-direction: column;
-  height: 350px;
-  width: 20%;
+  padding: 10px;
+  height: 360px;
+  width: 200px;
+}
+
+.cartas  img {
+  width: 150px;
+  height: 150px;
+  border-radius: 12px;
+  align-self: center;
+  margin:8px;
+}
+
+.cartas  p {
+  align-self:flex-end;
+  margin-right: 12px;
+  line-height: 1.5em;
 }
 
 .form {
   display: flex;
   flex-direction: column;
+  padding: 16px;
+  color: white;
+  background-color: rgb(51, 51, 133);
+  border-style: solid;
+  justify-content: space-evenly;
 }
 
 .tela {
+  background-image:url("/home/rafael/Projeto-Tryunfo/sd-019-a-project-tryunfo/images/fundo carta.png");
   display: flex;
   margin: 40px;
+  flex-direction: column;
 }
+
+.title {
+  display: flex;
+  justify-content: center;
+  background-color: rgb(22, 22, 122);
+  color:white;
+}
+
+.screen {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin:10px;
+ 
+}
+
+.readyCard {
+  display: flex;
+  flex-direction: row;
+  border-color:  rgb(255, 251, 9);
+  padding:10px;
+  gap:10px;
+}
+
+.cardBtn {
+  display: flex;
+  flex-direction: column;
+  border-radius: 16px;
+}
+
+.cardBtn button {
+  border-radius: 8px;
+  background-color: rgb(5, 5, 223);
+  color:white;
+  font-weight: 700;
+
+}
+
+

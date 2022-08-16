@@ -18,10 +18,10 @@ class Form extends React.Component {
 
     return (
       <div className="form">
-        <h2>Adicionar nova carta</h2>
+        <h2>Adicionar Nova Carta</h2>
         <label htmlFor="nome">
           {' '}
-          NOME
+          NOME :
           <input
             type="text"
             name="nome"
@@ -32,7 +32,7 @@ class Form extends React.Component {
         </label>
         <label htmlFor="descricao">
           {' '}
-          DESCRIÇÃO
+          DESCRIÇÃO :
           <textarea
             name="Description"
             value={ cardDescription }
@@ -42,7 +42,7 @@ class Form extends React.Component {
         </label>
         <label htmlFor="att1">
           {' '}
-          1º ATRIBUTO
+          1º ATRIBUTO :
           <input
             type="number"
             value={ cardAttr1 }
@@ -53,7 +53,7 @@ class Form extends React.Component {
         </label>
         <label htmlFor="att2">
           {' '}
-          2º ATRIBUTO
+          2º ATRIBUTO :
           <input
             type="number"
             value={ cardAttr2 }
@@ -64,7 +64,7 @@ class Form extends React.Component {
         </label>
         <label htmlFor="att3">
           {' '}
-          3º ATRIBUTO
+          3º ATRIBUTO :
           <input
             type="number"
             name="Att3"
@@ -75,7 +75,7 @@ class Form extends React.Component {
         </label>
         <label htmlFor="img">
           {' '}
-          IMAGEM
+          IMAGEM :
           <input
             type="text"
             name="Image"

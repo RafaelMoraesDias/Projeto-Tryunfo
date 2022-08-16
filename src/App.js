@@ -110,55 +110,62 @@ class App extends React.Component {
       } = this.state;
       return (
         <div className="tela">
-          <h1>Tryunfo</h1>
-          <Form
-            { ...this.state } // renderiza o estado anterior
-            cardName={ nome }
-            cardDescription={ Description }
-            cardAttr1={ Att1 }
-            cardAttr2={ Att2 }
-            cardAttr3={ Att3 }
-            cardImage={ Image }
-            cardRare={ Rare }
-            hasTrunfo={ hasTrunfo }
-            cardTrunfo={ Trunfo }
-            isSaveButtonDisabled={ isSaveButtonDisabled }
-            onInputChange={ this.onInputChange }
-            onSaveButtonClick={ this.onSaveButtonClick }
-          />
-          <Card
-            { ...this.state }
-            cardName={ nome }
-            cardDescription={ Description }
-            cardAttr1={ Att1 }
-            cardAttr2={ Att2 }
-            cardAttr3={ Att3 }
-            cardImage={ Image }
-            cardRare={ Rare }
-            hasTrunfo={ hasTrunfo }
-            cardTrunfo={ Trunfo }
-          />
-          {cards.map((el) => (
-            <div key={ el.nome }>
-              <Card
-                cardName={ el.nome }
-                cardDescription={ el.Description }
-                cardAttr1={ el.Att1 }
-                cardAttr2={ el.Att2 }
-                cardAttr3={ el.Att3 }
-                cardImage={ el.Image }
-                cardRare={ el.Rare }
-                cardTrunfo={ el.Trunfo }
-              />
-              <button
-                value={ el.nome }
-                onClick={ this.removeButton }
-                data-testid="delete-button"
-                type="button"
-              >
-                Delete Card
-              </button>
-            </div>))}
+          <div className="title">
+            <h1>Tryunfo</h1>
+          </div>
+          <div className="screen">
+            <Form
+              { ...this.state } // renderiza o estado anterior
+              cardName={ nome }
+              cardDescription={ Description }
+              cardAttr1={ Att1 }
+              cardAttr2={ Att2 }
+              cardAttr3={ Att3 }
+              cardImage={ Image }
+              cardRare={ Rare }
+              hasTrunfo={ hasTrunfo }
+              cardTrunfo={ Trunfo }
+              isSaveButtonDisabled={ isSaveButtonDisabled }
+              onInputChange={ this.onInputChange }
+              onSaveButtonClick={ this.onSaveButtonClick }
+            />
+            <Card
+              { ...this.state }
+              cardName={ nome }
+              cardDescription={ Description }
+              cardAttr1={ Att1 }
+              cardAttr2={ Att2 }
+              cardAttr3={ Att3 }
+              cardImage={ Image }
+              cardRare={ Rare }
+              hasTrunfo={ hasTrunfo }
+              cardTrunfo={ Trunfo }
+            />
+          </div>
+          <div className="readyCard ">
+            {cards.map((el) => (
+              <div className="cardBtn" key={ el.nome }>
+                <Card
+                  cardName={ el.nome }
+                  cardDescription={ el.Description }
+                  cardAttr1={ el.Att1 }
+                  cardAttr2={ el.Att2 }
+                  cardAttr3={ el.Att3 }
+                  cardImage={ el.Image }
+                  cardRare={ el.Rare }
+                  cardTrunfo={ el.Trunfo }
+                />
+                <button
+                  value={ el.nome }
+                  onClick={ this.removeButton }
+                  data-testid="delete-button"
+                  type="button"
+                >
+                  Delete Card
+                </button>
+              </div>
+            ))}
+          </div>
 
         </div>
       );
