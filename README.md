@@ -21,7 +21,7 @@ Tryunfo  é um projeto desenvolvido para simular um jogo de cartas no estilo Sup
 ## Rodando a aplicação:
 To download the code:
 ```
-git clone git@github.com:RafaelMoraesDias/Tryunfo.git
+git clone git@github.com:RafaelMoraesDias/Projeto-Tryunfo.git
 ```
 Enter the project root folder:
 ```
